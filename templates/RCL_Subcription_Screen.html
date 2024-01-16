@@ -1,0 +1,82 @@
+{% extends 'RCL_Main_Template.html' %}
+
+{% block title %}
+| Recruitment Centre
+{% endblock %}
+
+{% block header %}
+    {% include 'RCL_Header_Template.html' %}
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+        <div class="row justify-content-center">
+            {% for tier in tiers %}
+                <!-- Use the Bootstrap 'col' classes to define the width of each tier -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ tier.name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ tier.price }}</h6>
+                            <ul class="list-group list-group-flush">
+                                {% for feature in tier.features %}
+                                    <li class="list-group-item">{{ feature }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary w-100">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">DataSaints LTD</h5>
+                    <p>Here you can use rows and columns to organize your footer content.</p>
+                </div>
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#!" class="text-dark">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 YourBrand Name: All rights reserved.
+        </div>
+    </footer>
+    <!-- Optional Bootstrap JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    -->
+</body>
+{% endblock %}
+    
+{% block footer %}
+    
+{% endblock %}

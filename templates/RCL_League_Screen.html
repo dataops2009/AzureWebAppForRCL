@@ -1,0 +1,56 @@
+{% extends 'RCL_Main_Template.html' %}
+ 
+{% block title %}
+    League Overview
+{% endblock %}
+ 
+{% block header %}
+<!-- Header Content -->
+{% endblock %}
+ 
+{% block content %}
+    <style>
+        .league {
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .league-details, .league-standings {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .league h1, .league h2, .league h3 {
+            text-align: center;
+            color: #343a40;
+        }
+        .league p {
+            text-align: justify;
+            padding: 0 15px;
+        }
+        /* Additional styling as needed */
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<body>
+    <main>
+        <!-- Main content for the League -->
+        <section class="league">
+            <h1>League Overview</h1>
+            <div class="league-details">
+                <h2>Current Season</h2>
+                <p>Description of the current season, important dates, etc.</p>
+                <!-- Additional league information -->
+            </div>
+            <div class="league-standings">
+                <h3>Standings</h3>
+                <!-- League standings, possibly in a table or list format -->
+            </div>
+            <!-- Any other relevant league information -->
+        </section>
+    </main>
+    {% endblock %}
+
+    {% block footer %}
+    <!-- Footer Content -->
+    {% endblock %}

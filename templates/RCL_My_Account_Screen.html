@@ -1,0 +1,42 @@
+{% extends 'RCL_Main_Template.html' %}
+ 
+{% block title %}
+        My Account
+{% endblock %}
+ 
+{% block header %}
+<!-- Header Content -->
+{% endblock %}
+
+{% block content %}
+    <main>
+        <!-- Main content for My Account -->
+        <section class="my-account">
+            <h1>My Account</h1>
+            <div class="account-details">
+                <form action="path_to_your_update_endpoint" method="post">
+                    <!-- Example input fields (replicate and update as needed) -->
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" value="User123">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="user@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <!-- Additional fields as needed -->
+                    <button type="submit">Update Profile</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+{% endblock %}
+ 
+{% block footer %}
+  <!-- Footer Content -->
+  {% endblock %}

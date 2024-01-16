@@ -1,0 +1,48 @@
+{% extends 'RCL_Main_Template.html' %}
+ 
+{% block title %}
+RCL - Team Rankings
+{% endblock %}
+ 
+{% block header %}
+<!-- Header Content -->
+{% endblock %}
+ 
+{% block content %}
+<main class="container">
+    <h1 style="font-size: 75pt;">Welcome, {{ username }}</h1>
+    <section class="team-rankings">
+        <h1>Team Rankings</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Rank</th>
+                    <th>Team Name</th>
+                    <th>Games Played</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                    <th>Win-Loss Ratio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in teams_data %}
+                <tr>
+                    <td>{{ team[10] }}</td> <!-- Ranking -->
+                    <td>{{ team[1] }}</td> <!-- Team Name -->
+                    <td>{{ team[5] }}</td> <!-- Games Played -->
+                    <td>{{ team[6] }}</td> <!-- Wins -->
+                    <td>{{ team[7] }}</td> <!-- Losses -->
+                    <td>{{ team[8] }}</td> <!-- Draws -->
+                    <td>{{ team[9] }}</td> <!-- Win-Loss Ratio -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+{% endblock %}
+ 
+{% block footer %}
+<!-- Footer Content -->
+{% endblock %}

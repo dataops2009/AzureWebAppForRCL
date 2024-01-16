@@ -1,0 +1,37 @@
+{% extends 'RCL_Main_Template.html' %}
+
+{% block title %}
+| Recruitment Centre
+{% endblock %}
+
+{% block header %}
+    {% include 'RCL_Header_Template.html' %}
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section class="recruitment-centre">
+            <h1>Recruitment Centre for Team {{ team_id }}</h1>
+            <div class="player-listings">
+                <h2>Available Players</h2>
+                {% for player in available_players %}
+                <div class="player-card">
+                    <p>Player ID: {{ player[0] }}</p>
+                    <p>Player Name: {{ player[1] }}</p>
+                    <p>Ranking: {{ player[2] }}</p>
+                   <form method="POST" action="{{ url_for('RCL_Recruitment_Centre_Screen', team_id=team_id) }}">
+
+                        <input type="hidden" name="player_id" value="{{ player[0] }}">
+                        <input type="submit" value="Invite to Team">
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
