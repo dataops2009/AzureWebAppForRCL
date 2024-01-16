@@ -34,8 +34,8 @@ jobs:
         run: |
           # Add commands to run tests here
 
-   - name: Zip artifact for deployment
-  run: zip release.zip ./AzureWebAppForRCL/* -r
+      - name: Zip artifact for deployment  # <-- Fixed indentation here
+        run: zip release.zip ./AzureWebAppForRCL/* -r
 
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v2
